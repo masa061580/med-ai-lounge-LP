@@ -789,6 +789,42 @@ ul {
     color: #666;
 }
 
+/* Fincs Notice */
+.fincs-notice {
+    background: linear-gradient(135deg, #fff9e6, #fff3cc);
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.15);
+}
+
+.fincs-notice h4 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fincs-notice p {
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.fincs-notice p:last-child {
+    margin-bottom: 0;
+}
+
+.fincs-notice strong {
+    color: var(--primary-color);
+    background-color: rgba(212, 175, 55, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
 /* Sticky CTA Button */
 .sticky-cta {
     position: fixed;
