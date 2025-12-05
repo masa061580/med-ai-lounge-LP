@@ -1,0 +1,11 @@
+# Ignore markdown files (source documents)
+講師の情報.md
+セミナー感想.md
+セミナーの詳細.md
+
+# Ignore docs folder
+docs/
+
+# OS generated files
+.DS_Store
+Thumbs.db
