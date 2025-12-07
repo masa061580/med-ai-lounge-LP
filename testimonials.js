@@ -84,7 +84,7 @@ function initTestimonialsCarousel() {
             container.innerHTML = renderTestimonials(currentIndex);
             container.classList.remove('fading-out');
         }, 500); // フェードアウト時間
-    }, 5000); // 5秒ごとに切り替え
+    }, 6000); // 6秒ごとに切り替え
 }
 
 // DOMContentLoaded時に初期化
