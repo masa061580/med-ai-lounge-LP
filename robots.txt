@@ -1,0 +1,26 @@
+# robots.txt for med-ai-lounge LP
+
+User-agent: *
+Allow: /
+
+# Block LINE exclusive page from all crawlers
+Disallow: /x7f9k2m/
+
+# Block specific bots
+User-agent: Googlebot
+Disallow: /x7f9k2m/
+
+User-agent: Bingbot
+Disallow: /x7f9k2m/
+
+User-agent: Yahoo! Slurp
+Disallow: /x7f9k2m/
+
+User-agent: Baiduspider
+Disallow: /x7f9k2m/
+
+User-agent: YandexBot
+Disallow: /x7f9k2m/
+
+User-agent: DuckDuckBot
+Disallow: /x7f9k2m/
