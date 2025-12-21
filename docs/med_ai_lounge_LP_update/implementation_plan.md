@@ -1,31 +1,30 @@
-# リンク修正計画
+# Implementation Plan - 初級編セミナー終了対応
 
-ユーザーの要望に基づき、SeminarページとLine割引ページのリンクを修正します。主に中級編のリンクURLが更新対象となります。
+## 概要
+初級編セミナーが終了したため、LP上の表記を更新し、新規申し込みを停止する。デザインを変更して終了したことを視覚的に伝える。
 
-## ユーザーレビューが必要な事項
-- 特になし
+## 変更内容
 
-## 提案する変更
+### 1. CSS (`style.css`)
+- **終了済みカードのスタイル**:
+  - `.program-card.ended`: カード全体の透明度を下げる、またはグレースケールにする。
+  - ボックスシャドウを弱める、あるいは内側に「終了」を想起させるオーバーレイを追加する等の調整。
+- **無効化ボタンのスタイル**:
+  - `.btn.disabled`, `.btn-disabled`: 背景色をグレーにし、カーソルを `not-allowed` に変更。ポインターイベントを無効化。
 
-### `seminar/index.html` (通常ページ)
-#### [MODIFY] [index.html](file:///c:/Users/misaw/Desktop/Code_space/LP-page/seminar/index.html)
-- 中級編の申し込みリンクを以下の通り更新します。
-    - 変更前: `https://fincs.jp/plan/3052311990205796913/join/agreement?planPriceId=1009`
-    - 変更後: `https://fincs.jp/plan/4042180552264191503/join/agreement?planPriceId=1029`
-    - (注: 初級編は既存コードと一致しているため変更なし)
+### 2. HTML (`seminar/index.html` & `x7f9k2m/index.html`)
 
-### `x7f9k2m/index.html` (LINE割引ページ)
-#### [MODIFY] [index.html](file:///c:/Users/misaw/Desktop/Code_space/LP-page/x7f9k2m/index.html)
-- 中級編の申し込みリンクを以下の通り更新します。
-    - 変更前: `https://fincs.jp/plan/3052311990205796913/join/agreement?planPriceId=1018`
-    - 変更後: `https://fincs.jp/plan/4042180552264191503/join/agreement?planPriceId=1028`
-    - (注: 初級編は既存コードと一致しているため変更なし)
+トピック: 初級編 (Day 1) の要素に対して以下の変更を行う。
 
-## 検証計画
+- **Program Section**:
+  - `<div class="program-card">` に `ended` クラスを追加。
+  - カードフッターの申込ボタン `<a href="...">` を `<span class="btn btn-disabled">終了しました</span>` に置換。
+- **Lower CTA Section**:
+  - 初級編のボタンを `<span class="btn btn-lg btn-disabled">初級編 (終了)</span>` に置換。
+- **Sticky CTA**:
+  - 初級編のボタンを `<span class="btn btn-disabled btn-sm">初級編 (終了)</span>` に置換。
 
-### 自動テスト
-- なし
-
-### 手動検証
-1. **grepによる確認**
-   - 修正後のファイル内で、古いID (`1009`, `1018`) が存在せず、新しいID (`1029`, `1028`) とパス (`4042180552264191503`) が正しく反映されていることをコマンドラインで確認します。
+## 検証手順
+1. ブラウザで `seminar/index.html` および `x7f9k2m/index.html` を開き、初級編のカードが「終了」した見た目になっているか確認する。
+2. 初級編のボタンがクリックできなくなっていることを確認する。
+3. 中級編の表示やリンクには影響がないことを確認する。
